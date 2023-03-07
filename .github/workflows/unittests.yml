@@ -1,6 +1,8 @@
 name: "Pull Request Labeler"
 on:
-  - pull_request_target
+  pull_request:
+    branches:
+      - main
 
 jobs:
   triage:
@@ -8,10 +10,9 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
+    name: Changes in Common Components
     steps:
       - uses: actions/labeler@v4
+        bug: 'src/common/**'
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Add Label
-        bug: 'src/common/**'
