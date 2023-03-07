@@ -13,5 +13,5 @@ jobs:
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
 
-        - documentation:
-          - any: [ 'src/common/**', 'src/utils/**' ]
+      - name: Add Label
+        bug: 'src/common/**'
