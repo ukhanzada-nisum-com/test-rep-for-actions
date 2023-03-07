@@ -1,4 +1,3 @@
-My_Custom_Label:
-  any: ['src/components/**', 'src/utils.js']
-changes: 'src/utils2.js'
-bug: 'src/container/**'
+RISK Common Functionality: 'src/components/_Common/**/*'
+RISK Common Script: 'src/scripts/**'
+
