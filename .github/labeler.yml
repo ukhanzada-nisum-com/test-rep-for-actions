@@ -1,2 +1,3 @@
 My Custom Label:
 - any: ['src/common/**', 'src/utils.js']
+bug: 'src/container/**'
