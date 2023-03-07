@@ -1,9 +1,5 @@
 RISK Change in Common Component: 'src/components/_Common/**/*'
 RISK Change in Script: 'src/scripts/**/*'
-Missing UTs:
-- '!src/**/*.test.js'
-- '!src/**/*.test.jsx'
-- '!src/**/*.test.ts'
-- '!src/**/*.test.tsx'
+Missing UTs: '!src/**/*.test.*'
 
 
