@@ -1,3 +1,4 @@
-My_Custom_Label: ['src/common/**', 'src/utils.js']
+My_Custom_Label:
+-  any: ['src/common/**', 'src/utils.js']
 changes: 'src/utils2.js'
 bug: 'src/container/**'
