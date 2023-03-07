@@ -22,10 +22,3 @@ jobs:
         uses: tj-actions/changed-files@v35
         with:
           files: src/common/**  # Alternatively using: `docs/**` or `docs`
-
-      - name: Run step if any file(s) in the common folder change
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
-        uses: actions-ecosystem/action-add-labels@v1
-        with:
-          labels: |
-            documentation
