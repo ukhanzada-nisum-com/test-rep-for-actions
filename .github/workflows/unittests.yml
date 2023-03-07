@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  build:
+  changes-in-common:
     runs-on: ubuntu-latest  # windows-latest | macos-latest
     name: Test changed-files
     steps:
