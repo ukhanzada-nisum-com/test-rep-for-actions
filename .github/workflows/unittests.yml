@@ -1,32 +1,17 @@
-name: CI
-
+name: "Pull Request Labeler"
 on:
-  # Compare the last commit of main -> to the current commit of a PR branch.
-  # (Note: To compare changes between the current commit to the last pushed remote commit of a PR branch set `since_last_remote_commit: true`)
-  pull_request:
-    branches:
-      - main
+  - pull_request_target
 
 jobs:
-  build:
-    runs-on: ubuntu-latest  # windows-latest | macos-latest
-    name: Common changed-files
+  triage:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/labeler@v4
         with:
-          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
 
-      # Example 2
-      - name: Get changed files in the common folder
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v35
-        with:
-          files: src/common/**  # Alternatively using: `docs/**` or `docs`
-
-      - name: Add label if any file(s) in the common folder change
-        uses: actions-ecosystem/action-add-labels@v1
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
-        with:
-          labels: |
-            documentation
-            
+      - documentation:
+          - any: [ 'src/common/**', 'src/utils/**' ]
