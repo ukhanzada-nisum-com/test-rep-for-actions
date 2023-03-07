@@ -1,3 +1,7 @@
-RISK Common Functionality: 'src/components/_Common/**/*'
-RISK Common Script: 'src/scripts/**'
+RISK Change in Common Component: 'src/components/_Common/**/*'
+RISK Change in Script: 'src/scripts/**'
+Missing UTs:
+- src/**/*.test.js
+- src/**/*.test.ts
+
 
