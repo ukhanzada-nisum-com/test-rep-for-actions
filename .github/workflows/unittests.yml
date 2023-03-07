@@ -13,5 +13,5 @@ jobs:
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
 
-      - documentation:
+        - documentation:
           - any: [ 'src/common/**', 'src/utils/**' ]
